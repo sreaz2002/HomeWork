@@ -13,9 +13,9 @@ import com.page.object.model.LoginPage;
 import com.util.HeighLight;
 import com.util.TakeAppScreenShot;
 
-public class BaseLogin {
+public class BaseLogin { 
 	
-	
+	static WebDriver driver;
 	public static void getLogin() throws Throwable   {
 		
 	
@@ -28,7 +28,7 @@ public class BaseLogin {
 		Logger.getLogger("org.openqa.selenium").setLevel(Level.OFF); 
 		
 		
-		WebDriver driver=new ChromeDriver();
+		 driver=new ChromeDriver();
 		LoginPage login=new LoginPage(driver);
 		//maximize screen
 		driver.manage().window().maximize();
@@ -43,22 +43,16 @@ public class BaseLogin {
 		System.out.println("Title of Page:"+driver.getTitle());//Home page
 		
 		
-		//WebElement signin= driver.findElement(By.xpath("//*[@class='login']"));
-		HeighLight.getcolor(driver,login.getLogin());
-		//signin.click();
+			HeighLight.getcolor(driver,login.getLogin());
+		
 		TakeAppScreenShot.captureScreenShot(driver," This is Login Page" );
 		login.getLogin().click();
 		System.out.println("Title of Page:"+driver.getTitle());//Login Page
 		
 		
-		//WebElement email= driver.findElement(By.xpath("//*[@id='email']"));
-		//Wait.getExplicitWait(driver, email); 
-		//HeighLight.getcolor(driver, email,"red");
 		new HeighLight().getcolor(driver,login.getEmail(), "red");
 		
 		login.getEmail().sendKeys(BaseConfig.getconfig("email"));
-		//login.getPass().sendKeys(BaseConfig.getconfig("pass"));
-		//WebElement pass= driver.findElement(By.xpath("//*[@id='passwd']"));
 		
 		HeighLight.getcolor(driver, login.getPass());
 		login.getPass().sendKeys(BaseConfig.getconfig("pass"));
@@ -73,7 +67,7 @@ public class BaseLogin {
 		TakeAppScreenShot.captureScreenShot(driver, "Login Success");
 	     System.out.println(driver.getTitle());// after Login done  
 	     
-	     driver.quit();
+	    // driver.quit();
 		}
 
 	}
