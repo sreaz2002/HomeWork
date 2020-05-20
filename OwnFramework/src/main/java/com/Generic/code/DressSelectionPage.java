@@ -50,7 +50,7 @@ public class DressSelectionPage extends BaseLogin {
         	
         	
         	//Actions act = new Actions(driver);
-    	//	act.moveToElement(pf.getquantityinputbox()).click().perform();
+        	//act.moveToElement(pf.getquantityinputbox()).click().perform();
         	
           pf.getquantityBtn().click();
           
