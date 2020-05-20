@@ -1,5 +1,6 @@
 package com.Generic.code;
 
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.page.object.model.ProductPage;
@@ -25,13 +26,10 @@ public class DressSelectionPage extends BaseLogin {
 			System.out.println("Find Dress Name=  "+ pf.getDressesName().get(i).getText());
 		}
 		
-        //		list.foreach(e->e){
+        //		list.foreach(e->e){});
 		
-		//	}
+		
        	//	pf.getDressesName().forEach(Name->{
-			
-			
-
 		//	System.out.println("Dress Name=  "+ Name.getText());
 		//});
 		
@@ -51,6 +49,9 @@ public class DressSelectionPage extends BaseLogin {
         	pf.getDressesName().get(4).click();
         	
         	
+        	//Actions act = new Actions(driver);
+    	//	act.moveToElement(pf.getquantityinputbox()).click().perform();
+        	
           pf.getquantityBtn().click();
           
          // pf.getSizedropDownBtn().click();
@@ -64,16 +65,26 @@ public class DressSelectionPage extends BaseLogin {
 			
 			pf.getporocedBtn().click();
 			
+			pf.getsummeryProcessBtn().click();
+			
+		     pf.getprocessAddressBtn().click();
+		    
+		     pf.getcheckInBtn().click();
+		    
+		     pf.getshippingBtn().click();
+		    
+		     pf.getpaymentBtn().click();
+		    
+		     pf.getconfirmOrderBtn().click();
 		
-		 
 		
 		
-		
+	
+		     
 	
 	
 	
 	
-	
-	}
+	} 
 
 }
