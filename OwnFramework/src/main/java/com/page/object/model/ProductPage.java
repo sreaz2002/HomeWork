@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ProductPage {
+public class ProductPage { 
 
 	public ProductPage(WebDriver driver){
 		
@@ -73,6 +73,16 @@ public class ProductPage {
 			
 	@FindBy(xpath="(//*[@type='submit'])[2]")	
      private WebElement confirmOrderBtn;
+	
+	//*[@class='box order-confirmation']
+	
+	@FindBy(xpath="//*[@class='box order-confirmation']")	
+    private WebElement printConfirmPage;
+	
+	public WebElement getprintConfirmPage() {
+		return printConfirmPage;
+	}
+	
 	
 	public WebElement getconfirmOrderBtn() {
 		return confirmOrderBtn;

@@ -1,18 +1,23 @@
 package com.Generic.code;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.page.object.model.ProductPage;
-
-public class DressSelectionPage extends BaseLogin {
+import com.util.HeighLight;
+import com.util.TakeAppScreenShot;
+  
+public class DressSelectionPage extends BaseLogin { 
+	static WebDriver driver;
+	
 	public static void main(String[] args) throws Throwable {
 		//BaseLogin.getLogin();
 		 getLogin();//by using inheritance connection with login page
 		
 	
 		 ProductPage pf=new ProductPage(driver);
-		
+		 HeighLight.getcolor(driver, pf.getDresses());
 		 pf.getDresses().click();
 		 
 		int TotalNumber= pf.getDressesCount().size();
@@ -46,21 +51,23 @@ public class DressSelectionPage extends BaseLogin {
 			});
 		
 			//	Check the 5TH dress
+			 HeighLight.getcolor(driver,pf.getDressesName().get(4));
         	pf.getDressesName().get(4).click();
         	
         	
         	//Actions act = new Actions(driver);
         	//act.moveToElement(pf.getquantityinputbox()).click().perform();
-        	
+        	HeighLight.getcolor(driver,pf.getquantityBtn());
           pf.getquantityBtn().click();
           
          // pf.getSizedropDownBtn().click();
           
          Select select=new Select(pf.getSizedropDownBtn());
          // System.out.println(select.getOptions());
-          select.selectByIndex(2);
+        
+         select.selectByIndex(2); 
 		
-			
+         HeighLight.getcolor(driver,pf.getaddCardBtn());
 			pf.getaddCardBtn().click();
 			
 			pf.getporocedBtn().click();
@@ -75,11 +82,14 @@ public class DressSelectionPage extends BaseLogin {
 		    
 		     pf.getpaymentBtn().click();
 		    
-		     pf.getconfirmOrderBtn().click();
+		     pf.getconfirmOrderBtn().click(); 
+		     
+		     HeighLight.getcolor(driver,pf.getprintConfirmPage());
+		     System.out.println(pf.getprintConfirmPage().getText());
 		
 		
-		
-	
+		 
+	 
 		     
 	
 	

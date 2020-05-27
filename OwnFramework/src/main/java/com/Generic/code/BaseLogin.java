@@ -13,10 +13,10 @@ import com.page.object.model.LoginPage;
 import com.util.HeighLight;
 import com.util.TakeAppScreenShot;
 
-public class BaseLogin { 
+public  class BaseLogin { 
 	
-	static WebDriver driver;
-	public static void getLogin() throws Throwable   {
+	protected static WebDriver driver;
+	public static  WebDriver getLogin() throws Throwable    {
 		
 	
 	
@@ -68,6 +68,8 @@ public class BaseLogin {
 	     System.out.println(driver.getTitle());// after Login done  
 	     
 	    // driver.quit();
+	     
+	     return driver;
 		}
 
 	}
